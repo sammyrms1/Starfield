@@ -1,5 +1,6 @@
 Particle [] stars;
 Particle oddStar;
+Particle giant;
 public void setup()
 {
 	size(600, 600);
@@ -8,6 +9,7 @@ public void setup()
 		stars[i] = new NormalParticle();
 	}
 	oddStar = new OddballParticle();
+	giant = new JumboParticle();
 
 }
 public void draw()
@@ -19,6 +21,8 @@ public void draw()
 	}
 	oddStar.show();
 	oddStar.move();
+	giant.show();
+	giant.move();
 }
 
 //Particles
@@ -93,11 +97,12 @@ public void show()
  }
 
 }
-class JumboParticle
+class JumboParticle extends OddballParticle
 {
 public void show()
  {
-
+ 	fill(255,255,0);
+ 	ellipse((int)dX, (int)dY, 20, 20);
  }
 }
 
